@@ -1,0 +1,72 @@
+---
+title: Post, delete , update, Part 3
+date: '2021-10-02'
+tags: ['.net', 'api']
+draft: false
+summary: Catalog Api Project
+images: []
+layout: PostLayout
+---
+
+## What you will Learn
+
+1. How to create resources with Post.
+2. How to Validate the values of DTO properties.
+3. How to Update resources with Put.
+4. How to delete resources with Delete
+
+## First Update the interface
+
+Add a Create Method to the interface.
+
+```csharp
+void CreateItem(Item item);
+```
+
+To create some values may be generated on the server while other are supplied as DTO, therefore we need to add a **createDto**.
+
+```csharp
+namespace catalog.Dtos;
+
+public record CreateItemDto
+{
+    public string Name { get; init; }
+    public decimal Price { get; init; }
+}
+```
+
+Got to the repository class and Implement the interface. You will need to update the **createMethod** as follows.
+
+```csharp
+    public void CreateItem(Item item)
+    {
+        items.Add(item);
+    }
+```
+
+Lastly we need a route to expose this functionality. Lets add a create route in the items controller.
+
+```csharp
+ [HttpPost]
+    public ActionResult<ItemDto> CreateItem(CreateItemDto itemDto)
+    {
+        Item item = new()
+        {
+            Id = Guid.NewGuid(),
+            Name = itemDto.Name,
+            Price = itemDto.Price,
+            CreatedDate = DateTimeOffset.UtcNow
+        };
+        _repository.CreateItem(item);
+
+        return CreatedAtAction(nameof(GetItem), new { id = item.Id }, item.AsDto());
+    }
+```
+
+Lets test the create Functionality.
+
+<div className="flex flex-wrap -mx-2 overflow-hidden xl:-mx-2">
+  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
+    <img alt="Folder structure" src="/static/images/crud/create.png" />
+  </div>
+</div>
