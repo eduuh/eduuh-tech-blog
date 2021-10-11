@@ -1,0 +1,25 @@
+---
+title: Dependecy Inversion Principle (DIP)
+date: '2021-10-02'
+tags: ['.net', 'api', 'solid']
+draft: true
+summary: Catalog Api Project
+images: []
+layout: PostLayout
+---
+
+> One should "depend upon abstraction [not] conretions" - Robert C. Martin
+
+Interfaces are one of the important element of our SOLIT arsenal!.Using interfaces is the best way to approach the DIP.
+**Abstract Classes** are also abstractions but as a rule of thumb, you should depend on interfaces whenever possible instead.
+
+An **abstract class** is an abtraction, but it not 100% abtract, and if it is, you should replace it with an interface. Abtract classes are used to encapsulate default behaviours that you can then inherit in sub-classes. They are useful, but interface are more flexible, more powerful and better suited for design contracts.
+Using interfaces can save you countless of hours of struggling and complex workarounds when programming unit tests. That is even truer if you are building a framework or library that other people use.
+
+How can dependecies be inverted?
+
+Let's begin by comparing a **direct dependecy** and and **inverted dependecy**.
+
+## Direct Dependency
+
+If we have a **Ninja** class using a **Weapon instance** , the dependecy graph should look like this because the Ninja
