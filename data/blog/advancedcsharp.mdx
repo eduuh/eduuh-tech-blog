@@ -1,0 +1,102 @@
+---
+title: Abstract
+date: '2021-12-30'
+tags: [advancedcsharp]
+draft: true
+summary:
+images: []
+layout: PostLayout
+---
+
+Advanced csharp concepts gives use more abstraction of the logic unlike the basic csharp concecpts.
+
+1. Delegates
+2. Extension Methods
+3. Events
+4. Extension Methods
+5. Lambda Expressions
+6. LINQ
+7. Asyncronous Programming (async / await)
+8. Reflections
+9. Attributes
+
+## What makes programming concepts more advanced concepts?
+
+The more abstract the concept the more difficult the concept is to understand for most people.
+
+### What is Abstract.
+
+- Theory of forms.
+
+### Why undestand abstract concepts?
+
+Gaining an undertanding of the more abstract advanced concepts can be applied to achieve better code
+
+1. Better code reuse.
+2. Cleaner code.
+3. Extensibility.
+4. Flexibility of design.
+5. Easier maintenance of code.
+6. Separation of concerns.
+7. Enablement of effective unit testing.
+8. Provision of overall better performance and efficiency of our applicaiton.
+
+## Code.
+
+- Sum is and Extension Method
+- Sum take in a delegate.
+
+## Linq - Language intergrated Query
+
+Queries that work on strongly typed collection of objects.
+
+```csharp
+var employeesNames = employeesList.where(e => e.Salary > 30000)
+                    .Select(e => e)
+                    .where(d => d.DepartmentId ===2)
+                    .Select(e => e.EmployeeName);
+```
+
+## Extension Methods
+
+Allows the developer to add methods to existing types without creating a new derived types, recompiling or otherwise modifiying the existing types.
+
+```csharp
+public static class MyExtensions {
+   public static int wordCount(this String str) {
+        return str.Split(new char[] { '','',''}, StringSplitOptions.RemoveEmptyEntries).Length;
+     }
+}
+```
+
+### Delegates. (Type safe function pointer)
+
+Delegate is a type that represent references to methods with a particular parameter list and return types.
+
+```csharp
+
+  class Program {
+   delegate void Del(int i, double j);
+
+   static void Main(string[] args) {
+
+     Del d = MultiplyNumbers;
+
+     for(int i=1; i <= 5; i++) {
+        del(i,2);
+      }
+  }
+    static void MultiplyNumbers(int m , double n){
+       Console.Write(m * n + "");
+    }
+}
+
+```
+
+## Lambda Expression
+
+A shorter way of representing an ananomous method using a special syntax. Func types allow use to represent and store anonoymous method in a simple way.
+
+```csharp
+Func<string,string> selector = str => str.Toupper();
+```

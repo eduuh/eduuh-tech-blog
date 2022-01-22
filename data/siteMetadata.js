@@ -1,10 +1,10 @@
 const siteMetadata = {
   title: 'journaling site',
   author: 'Edwin Muraya',
-  headerTitle: 'eduuhs',
+  headerTitle: 'Vachuo',
   description: 'A blog',
   language: 'en-us',
-  siteUrl: 'https://eduuh.vachua.com',
+  siteUrl: 'https://blog.vachua.com',
   siteRepo: 'https://github.com/eduuh/journal',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
