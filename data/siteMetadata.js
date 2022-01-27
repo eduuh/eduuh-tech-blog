@@ -1,12 +1,12 @@
 const siteMetadata = {
-  title: 'journaling site',
-  author: 'Edwin Muraya',
-  headerTitle: 'eduuhs',
-  description: 'A blog',
+  title: 'Blog',
+  author: 'Vachuo',
+  headerTitle: 'Vachuo',
+  description: 'Some amazing blog posts that are written by even more amazing people',
   language: 'en-us',
-  siteUrl: 'https://eduuh.vachua.com',
+  siteUrl: 'https://blog.vachua.com',
   siteRepo: 'https://github.com/eduuh/journal',
-  siteLogo: '/static/images/logo.png',
+  siteLogo: '/static/images/logo.svg',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
   email: 'eduuhme@gmail.com',
@@ -16,7 +16,7 @@ const siteMetadata = {
   locale: 'en-US',
   analytics: {
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
-    simpleAnalytics: false, // true or false
+    simpleAnalytics: true, // true or false
     googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
   },
   newsletter: {
@@ -41,7 +41,7 @@ const siteMetadata = {
       metadata: '0',
       // theme example: light, dark, dark_dimmed, dark_high_contrast
       // transparent_dark, preferred_color_scheme, custom
-      theme: 'light',
+      theme: 'transparent_dark',
       // theme when dark mode
       darkTheme: 'transparent_dark',
       // If the theme option above is set to 'custom`
