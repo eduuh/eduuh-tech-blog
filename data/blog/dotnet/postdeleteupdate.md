@@ -1,7 +1,7 @@
 ---
 title: Catalog 3. Post, delete , update (API)
 date: '2021-10-16'
-tags: ['.net', 'api']
+tags: ['.net', 'api', 'catalog']
 draft: false
 summary: Part 3 Catalog Api Project. Exploring .Net 6 , csharp 10  together with MongoDB
 images: []

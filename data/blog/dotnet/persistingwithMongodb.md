@@ -1,7 +1,7 @@
 ---
 title: Catalog 4. Persisting Dtos to Mongodb
 date: '2021-10-16'
-tags: ['.net', 'api', 'mongodb']
+tags: ['.net', 'api', 'catalog']
 draft: false
 summary: Part 4 Catalog Api Project. Exploring .Net 6 , csharp 10  together with MongoDB
 images: []
