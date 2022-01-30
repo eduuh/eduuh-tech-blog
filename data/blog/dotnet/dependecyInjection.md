@@ -1,9 +1,9 @@
 ---
-title: Dependecy Injection, Part 2
+title: Catalog 2.  Dependecy Injection
 date: '2021-10-15'
-tags: ['.net', 'api']
+tags: ['.net', 'catalog', 'api']
 draft: false
-summary: Catalog Api Project
+summary: Part 2 Catalog Api Project. Exploring .Net 6 , csharp 10  together with MongoDB
 images: []
 layout: PostLayout
 ---
@@ -17,7 +17,7 @@ layout: PostLayout
 
 ## What is Dependency Injections
 
-Asp.Net Core support the Dependency Injection (DI) sofware design pattern, which is techinque for achieving **Inversion of Control (IoC)** between classes and their dependecies.
+.Net Core support the Dependency Injection (DI) sofware design pattern, which is techinque for achieving **Inversion of Control (IoC)** between classes and their dependecies.A dependency is an object that another object depends on.
 
 <div className="flex flex-wrap -mx-2 overflow-hidden xl:-mx-2">
   <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
@@ -25,7 +25,7 @@ Asp.Net Core support the Dependency Injection (DI) sofware design pattern, which
   </div>
 </div>
 
-A dependency is an object that another object depends on. Examine the above **ItemsController** class which depends on **InMemoryRepository** class. A class can create an instance making this case **InMemoryRepository** the dependecy of the **ItemsController** class. This is a direct dependecy which result to some problems.
+Examining the above **ItemsController** class which depends on **InMemoryRepository** class. A class can create an instance making this case **InMemoryRepository** the dependecy of the **ItemsController** class. This is a direct dependecy which result to some problems.
 
 1. To replace the **InMemoryRepository** with a different implementation, the **ItemsController** class must be modified.
 2. If **InMemoryRepository** has dependecies, they must also be configured by the Controller. In a large project with multiple classes depending on the **InMemoryRepository** dependency, the configuration code becomes scattered across the app.
@@ -35,8 +35,8 @@ A dependency is an object that another object depends on. Examine the above **It
 
 Dependecy injection addresses these problems through:
 
-- The use of an interface or base class to abstract the dependecy implementation.
-- Registration of the dependecy in a service container. Asp.Net core provides a built-in service container, IServiceProvider.
+- The use of an **interface** or **base class to abstract the dependecy implementation**.
+- Registration of the dependecy in a service container. .Net core provides a built-in service container, **IServiceProvider.**
 - Injection of the service into the constructor of the class where it's used. The framework takes on the responsibility of creating an instance of the dependecy and disposing of it when it's no longer needed.
 
 <div className="flex flex-wrap -mx-2 overflow-hidden xl:-mx-2">
@@ -53,12 +53,6 @@ By using the DI patterm, the controller:
 Let see how we can use Dependecy Injection to our advantage. First we are going to remove the Explicity dependecy from our controller.
 
 Lets use Extract an interface from the IInMemItemsRepository. Move your cursor on the ClassName and Click on the Light ball. Click on the option to extract an interface.
-
-<div className="flex flex-wrap -mx-2 overflow-hidden xl:-mx-2">
-  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
-    <img alt="Folder structure" src="/static/images/extractinterface.png" />
-  </div>
-</div>
 
 You can now move the file in Its own file **IInMemItemsRepository.cs**
 
@@ -79,7 +73,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace catalog.Controllers;
 [ApiController]
 [Route("items")]
-public class ItemsController : ControllerBase
+public class ItemsController : IInMemItemsRepository
 {
 
     // GET /items

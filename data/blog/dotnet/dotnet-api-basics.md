@@ -1,25 +1,23 @@
 ---
-title: One Dotnet Basics, Part 1
+title: Catalog 1. Dotnet Rest API Basics
 date: '2021-10-02'
-tags: ['.net', 'api']
+tags: ['.net', 'catalog', 'api']
 draft: false
-summary: Catalog Api Project
+summary: Part 1 Catalog Api Project. Exploring .Net 6 , csharp 10  together with MongoDB
 images: []
 layout: PostLayout
 ---
 
 ## .Net 6 Rest Api
 
-Allows you to expose resources both inside or outside your network. The idea behing HTTP is that a client sends an HTTP requests to a server, and then the server responds to that client. This is one of the most important concepsts, irrespective of whether you are building web APIS, websites or complex cloud applications.
+A Rest API allows you to expose resources both inside or outside your network. The idea behing HTTP(workflow) is that a client sends an **HTTP request** to a server, and then the server responds to that client with a **response.** This is one of the most important concepts irrespective of whether you are building web APIS, websites or complex cloud applications.
 
 In summary this is the lifecyle of a https request.
 
-1. The communication starts.
-2. The client sends a request to the server.
-3. The server receiver the request.
-4. The server most likely does something(executes some logic/code)
-5. The server responds to the client.
-6. The communications ends.
+1. The communication starts on the client by sending a request to a web server.
+2. The server receives the request and executes the logic behind the request.
+3. Once the logic has successfully completed the server responds with a response.
+4. The communications ends.
 
 After that cycle, the server is no longer aware of the client and if the client sends another request, the server is not aware that it responded to a request earlier for the same client because **HTTP is stateless**.
 
@@ -27,14 +25,15 @@ In this case **.Net 6 Appliciation** will be the server and we will use **Swagge
 
 ## What you will learn
 
-- How to create a .Net 5 web API project
+- How to create a .Net 6 web API project
 - Using swagger UI to interact with the API
 
 ## What you need
 
-- The .Net 6 SDK
-- vscode
-- A basic Understanding of csharp language
+- [The .Net 6 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0).
+- [Visual Studio code](https://code.visualstudio.com/) or any Preffered Editor.
+- [MongoDB](https://www.mongodb.com/atlas/database)
+- Understanding of csharp language 10 features
 
 ## Scenario
 
@@ -48,26 +47,30 @@ This is is what we will be creating in this post.
 
 ## Check the Dotnet Version
 
+First ensure that dotnet is installed.
+
 ```powershell
 dotnet --version
-# 6.0.100-rc.1.21458.32
+# 6.0.101
 ```
 
-## Trust Dev-Certificates
+## Trust dev-certificate
+
+This will allow the web api to use a self signed certificate when developing. More information can be found [here](https://docs.microsoft.com/en-us/dotnet/core/additional-tools/self-signed-certificates-guide)
 
 ```PowerShell
 dotnet dev-certs https --trust
 ```
 
-## Create the Project
+## Starting the Creation
 
-Create the project using the command:
+You have a folder in your hard drive where you store all your local repositories. You open **Visual Studio Code** and use the terminal to navigate this folder. Once in the folder, you create a project using the following statement.
 
 ```PowerShell
 dotnet new webapi -n catalog
 ```
 
-.Net 6 folder structure
+The folder structure of .Net 6 will appear as shown below. _.Net_ and _.Net core_ organize project and solutions in a slightly different way.
 
 <div className="flex flex-wrap -mx-2 overflow-hidden xl:-mx-2">
   <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
@@ -77,15 +80,46 @@ dotnet new webapi -n catalog
 
 ## Visual Studio Code Debugging
 
-## Run From CommandLine
+This step visual studio code handles very well. Once you click on start debugging, vscode will request you to select the stack (_.Net Core_) you want to debug. Vscode will generate two files, **launch.json and tasks.json** in a .vscode folder.
 
-## Swagger
+<div className="flex flex-wrap -mx-2 overflow-hidden xl:-mx-2">
+  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
+    <img alt="Visual Studio Debugging" src="/static/images/rest/rest-vscodedebuggin.png"/>
+  </div> 
+</div>
 
-## Launch and Build
+The image above shows a debug session with the lauch.json file open. There are two section use to start debugging in different ways. You can **launch the application in debug mode** or you could **attach the debugger to a running process**.
 
-### Avoid New Instance Api From Opening Other Windows
+## Run from Command Line
 
-Opening a new tab instance when developing a web API can be a lot. It's important to disable this functionality. Go to the vscode/lanch.json setting and remove the section
+To start the application from command line, ensure you are in the root folder of the application and use the statement.
+
+```bash
+dotnet run
+```
+
+**dotnet run** will build your application and then start it. What about applying changes (when coding) to the running application without manually rebuilding? The answer is **Hot Reload**. In _visualstudio_ there is handy button called **Apply code changes** but when using Linux, these feature is provided through **dotnet watch**. [read more on Hot Reload](https://devblogs.microsoft.com/dotnet/introducing-net-hot-reload/)
+
+```bash
+dotnet watch run
+# available in .Net 6 only
+```
+
+## Swagger UI
+
+Allows engineers to get self-generated documentation for different platforms. Swagger UI is fully customizable tool that can be hosted in any enviroment. A great plus is that is enables developers to save a lot of time for API documentation.
+
+<div className="flex flex-wrap -mx-2 overflow-hidden xl:-mx-2">
+  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
+    <img alt="Folder structure" src="/static/images/rest/rest-swagger.png"/>
+  </div> 
+</div>
+
+## Launch and Build Tricks
+
+### Avoid New Instance Api From Opening Other Browser Tabs
+
+Opening a new tab instance when developing a web API can be a lot. It's important to disable this functionality. Go to the _vscode/lanch.json_ setting and remove the section
 
 ```json
  "serverReadyAction": {
@@ -95,7 +129,7 @@ Opening a new tab instance when developing a web API can be a lot. It's importan
 
 ```
 
-## Up the Build Task
+### Update the Build Task
 
 Update the vscode task file build to default to building. Now you can perform vscode build by pressing keybinding **Ctrl+Shift+B**.
 
@@ -120,7 +154,7 @@ Update the vscode task file build to default to building. Now you can perform vs
 
 ## Let write Some Code
 
-we will start by creating a type of item with the following properties.
+Lets start by creating a record type of item with the following properties.
 
 ```CSharp
 using System;
@@ -137,7 +171,17 @@ public record Item
 
 Note: This is not how you should create a repository class. It serves as a good starting point to understanding how to work with a dotnet core API.
 
-Let's create a repository class. A repository class how functionality of how to get **all the records** , **A single record**, **creating a record** , **Updating a record** and **Deleting a Record**. For our Catalog class, let's just create a repository that can Get records.
+Let's create a repository class. A repository class have the following functionalities.
+
+- Get **all the records**
+- Get **A single record**,
+- **Creating a record**
+- **Updating a record**
+- **Deleting a Record**.
+
+For our Catalog class, let's just create a repository that can Get records.
+
+_For now the datastore is readonly list. we will replace this with MongoDB._
 
 ```CSharp
 using catalog.Entities;
@@ -263,4 +307,4 @@ Once we test the route, we will now get a Notfound return with a 404 status code
     }
 ```
 
-Let's update the Implementation problem using **dependency injection, singleton** in the next post.
+Let's update the Implementation and solve the problem using **dependency injection, singleton** in the [next post](http://localhost:3000/blog/dotnet/dependecyInjection).

@@ -1,9 +1,9 @@
 ---
-title: Persisting With Mongodb, Part 4
+title: Catalog 4. Persisting Dtos to Mongodb
 date: '2021-10-16'
 tags: ['.net', 'api', 'mongodb']
 draft: false
-summary: Adding Persistence to our .Net Api
+summary: Part 4 Catalog Api Project. Exploring .Net 6 , csharp 10  together with MongoDB
 images: []
 layout: PostLayout
 ---
@@ -15,18 +15,18 @@ layout: PostLayout
 
 ## Adding Persistence
 
-If the rest api is restarted, stopped or crashes when we are saving inMemory, all the data we have in the inmemory database is lost. We don't want a scenario which will loss our data when we restart the web server.
+If the rest api (_previous implementations_) is restarted, stopped or crashes when we are saving inMemory, all the data we have in the inmemory database is lost. We don't want a scenario which will losses our data when we restart the web server.
 
 There a few persistence options, **Files** , **Databases** ( Relational, No-SQL). In this part post, let's use MongoDb database which is a No-Sql database. Some of the No-SQL benefits are:
 
-1. No Need for a schema or SQL
+1. No Need for a schema or SQL (_we need to enforce one_)
 2. Low Latency
 3. High Performance
 4. Highly Scalable
 
 ## Using Postman
 
-One you use postman, you will get no result and an error that **ssl verification** failed.This is because .Net 5 uses self-signed certificates. You will need to disable ssl verificatio on postman to be able to use the Api.
+One you use postman on insomnia, you will get no result and an error that **ssl verification** failed.This is because .Net 5 uses self-signed certificates. You will need to disable ssl verification on postman to be able to use the Api.
 
 <div className="flex flex-wrap -mx-2 overflow-hidden xl:-mx-2">
   <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
@@ -36,7 +36,7 @@ One you use postman, you will get no result and an error that **ssl verification
 
 Press on the **Disable Ssl Verification** to disable it.
 
-Once you disable Ssl Verification, you will now be able to get the resource.
+Once you disable ssl Verification, you will now be able to get the resource.
 
 ## Create a MongoDbItemsRepository
 
@@ -44,11 +44,15 @@ This repository will need to Implement the same Interface that the ImMemoryRepos
 
 ### Add the Mongo client
 
+Ensure that you are in the root folder of the application and execute the following statement.
+
 ```bash
 dotnet add package MongoDB.driver
 ```
 
-### Initialize the controller as Follows
+## Initialize the Repository by Implementing the Interface.
+
+Note: All the method are not implemented, when you try to use them as they are you willget a NotImplementedException.
 
 ```csharp
 
@@ -115,50 +119,128 @@ We need to tell our dotnet Api to point to the created container instance.Lets a
 Open **appsettings.json** and add the following configurations.
 
 ```json
-
+  ...
+  "MongoDbSettings": {
+    "Host": "localhost",
+    "port": "27017",
+    "User": "root"
+  }
+  ...
 ```
 
 There are many ways to read the configurations from the dotnet Api. Lets Create a class that represents the configuration in a **settings** folder. Since we are creating a class, this gives us flexibility to perform calculation of the mongodb connection string using c# property.
 
 ```csharp
+namespace Catalog.Settings;
+public class MongoDbSettings {
+  public string Host { get; set; }
+  public string Port { get; set; }
+  public string User { get; set; }
+  public string Password { get; set; }
+
+  public string ConnectionString { get {
+    return $"mongodb://{User}:{Password}@{Host}:{Port}";
+  } }
+}
 
 ```
 
-### Lets Register our Client to The DI Container
+### Lets Register our MongoDB Client to The DI Container
 
 We need to get the connections string and use the connection string to create a single instance of the mongodb for the application.
 
+To read the configuration from the configuration file (**appsettings.json**).
+
 ```csharp
+var settings = builder.Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>();
+```
+
+To register MongoDB client to the DI container (**ServiceProvider**).
+
+```csharp
+builder.Services.AddSingleton<IMongoClient>(serviceProvider =>
+{
+var configuration = serviceProvider.GetRequiredService<IConfiguration>();
+    return new MongoClient(settings.ConnectionString);
+});
 
 ```
 
-### Flip our Service
+### Flip our Service: IInMemItemsRepository with MongoDbItemsRepository
 
-Switch our service to start using our new Mongodbrepository. This is easy as replacing the line \*\*\*\* to
+Switch our service to start using our new Mongodbrepository. Now the implementation of IInMemItemsRepository will be injected with **MongoDbItemsRepository**.
 
 ```csharp
-
+builder.Services.AddSingleton<IInMemItemsRepository, MongoDbItemsRepository>();
 ```
 
 ### Configure the Types
 
-If you leave the default type provided by dotnet. The may end up having a representation that we dont want in the mongodb database. We need a way to tell mongoclient how to map between dotnet types and its types.
+If you leave the default type provided by dotnet. The may end up having a representation that we don't want in the mongodb database. We need a way to tell mongoclient how to map between dotnet types and its types. Incompatible types includes the guid and DatetimeOffset.
 
-The first incompatible type is the guid and DatetimeOffset, we need to tell mongoclient to treat guids as strings. This is how this is achieved.
+We need to tell mongoclient to map Guids and DatetimeOffset as strings. This is how this is achieved. For this it was done in **Program.cs**.
 
 ```csharp
+BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
+BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(BsonType.String));
+```
+
+## Lets Implement MongoDbItemsRepository Methods
+
+The final repository class looks like this.
+
+```csharp
+using catalog.Entities;
+using MongoDB.Bson;
+using MongoDB.Driver;
+
+namespace catalog.Repositories;
+
+public class MongoDbItemsRepository : IInMemItemsRepository
+{
+   private const string databaseName = "catalog";
+   private const string collectionName = "items";
+   private readonly IMongoCollection<Item> itemsCollection;
+
+   private readonly FilterDefinitionBuilder<Item> filterbuilder = Builders<Item>.Filter;
+
+   public MongoDbItemsRepository(IMongoClient mongoClient)
+   {
+	IMongoDatabase database = mongoClient.GetDatabase(databaseName);
+        itemsCollection  = database.GetCollection<Item>(collectionName);
+   }
+    public async Task CreateItemAsync(Item item)
+    {
+	     await itemsCollection.InsertOneAsync(item);
+    }
+
+    public async Task DeleteItemAsync(Guid id)
+    {
+        var filter = filterbuilder.Eq(item => item.Id ,id);
+	await itemsCollection.DeleteOneAsync(filter);
+    }
+
+    public async Task<Item> GetItemAsync(Guid id)
+    {
+        var filter = filterbuilder.Eq(item => item.Id ,id);
+	return await itemsCollection.Find(filter).SingleOrDefaultAsync();
+    }
+
+    public async Task<IEnumerable<Item>> GetItemsAsync()
+    {
+       return await itemsCollection.Find(new BsonDocument()).ToListAsync();
+    }
+
+    public async Task UpdateItemAsync(Item item)
+    {
+        var filter = filterbuilder.Eq(existingitem => existingitem.Id, item.Id);
+	await itemsCollection.ReplaceOneAsync(filter, item);
+    }
+}
 
 ```
 
-## Lets Implement the Methods
-
-### Create
-
-The create method is a simple method.
-
-```csharp
-
-```
+### Testing The Create Method
 
 <div className="flex flex-wrap -mx-2 overflow-hidden xl:-mx-2">
   <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">

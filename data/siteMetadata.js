@@ -1,5 +1,5 @@
 const siteMetadata = {
-  title: 'Blog',
+  title: 'Vachuo-blog',
   author: 'Vachuo',
   headerTitle: 'Vachuo',
   description: 'Some amazing blog posts that are written by even more amazing people',
@@ -7,7 +7,7 @@ const siteMetadata = {
   siteUrl: 'https://blog.vachua.com',
   siteRepo: 'https://github.com/eduuh/journal',
   siteLogo: '/static/images/logo.svg',
-  image: '/static/images/avatar.png',
+  image: '/static/images/avatar.svg',
   socialBanner: '/static/images/twitter-card.png',
   email: 'eduuhme@gmail.com',
   github: 'https://github.com/eduuh',

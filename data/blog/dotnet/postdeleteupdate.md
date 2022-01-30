@@ -1,9 +1,9 @@
 ---
-title: Post, delete , update, Part 3
+title: Catalog 3. Post, delete , update (API)
 date: '2021-10-16'
 tags: ['.net', 'api']
 draft: false
-summary: Catalog Api Project
+summary: Part 3 Catalog Api Project. Exploring .Net 6 , csharp 10  together with MongoDB
 images: []
 layout: PostLayout
 ---
@@ -75,7 +75,7 @@ Lets test the create Functionality.
 
 ### Creating Invalid Object.
 
-If you try to post and invalid object. If we try to add a value with no name, our api will accept the value and save inconsistent data. This is something we need to avoid. .Net providea concept of **data annotations** to add validation to our fields.
+If you try to post an invalid object i.e an object with no name, our api will accept the value and save inconsistent data. This is something we need to avoid .Net providea concept of **data annotations** to add validation to our fields.
 
 <div className="flex flex-wrap -mx-2 overflow-hidden xl:-mx-2">
   <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
@@ -85,7 +85,7 @@ If you try to post and invalid object. If we try to add a value with no name, ou
 
 ### Add Data Annotation
 
-we are going to add Data Annotation to the **CreateItemDto** to tell dotnet core, to ensure that all the fields are required.
+we are going to add Data Annotation to the **CreateItemDto** to tell .Net core, to ensure that all the fields are required.
 
 This is how the Dto will look like.
 
@@ -171,7 +171,7 @@ Then we need to add an Update route in the controller. The signature of the meth
 
 ### Test the Controller
 
-The final step is to test the controller to ensure that the controller is working as expected.
+The final step is to test the controller to ensure that the controller routes are working as expected.
 
 You will see that the controller will be working alright.
 
@@ -220,3 +220,5 @@ The controller method will be implemented as follows.
 	  return NoContent();
       }
 ```
+
+That was all, Next lets look on how to persist the data in a mongoDb database.
