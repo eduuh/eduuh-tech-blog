@@ -2,7 +2,7 @@
 title: Algorithm Analsis
 date: '2021-10-02'
 tags: ['.net', 'datastructure']
-draft: true
+draft: false
 summary: Big O Notation
 images: []
 layout: PostLayout
@@ -39,7 +39,7 @@ Benchmark Analysis tracking the time use to executet the function.
 Big 0 time is the language and metric we use to describe the efficency of algorithms.
 
 To analyze the running time of an algorithm without performing experiments, we perform an analysis directly on a high-level description of the algorithm(Pseudocode).
-
+pdate-corona.herokuapp.com
 We can adopt one of the three strategies:
 
 - **Best case Analysis** - we consider the specific input that results in the execution of the fewest possible primitive operation.
