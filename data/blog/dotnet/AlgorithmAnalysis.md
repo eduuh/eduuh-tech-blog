@@ -1,5 +1,5 @@
 ---
-title: Algorithm Analsis
+title: Algorithm Analysis (Big O)
 date: '2021-10-02'
 tags: ['.net', 'datastructure']
 draft: false
