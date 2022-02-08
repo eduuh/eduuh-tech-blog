@@ -8,6 +8,10 @@ images: []
 layout: PostLayout
 ---
 
+## Overview
+
+<TOCInline toc={props.toc} exclude="Overview" toHeading={2} />
+
 ## .Net 6 Rest Api
 
 A Rest API allows you to expose resources both inside or outside your network. The idea behing HTTP(workflow) is that a client sends an **HTTP request** to a server, and then the server responds to that client with a **response.** This is one of the most important concepts irrespective of whether you are building web APIS, websites or complex cloud applications.
