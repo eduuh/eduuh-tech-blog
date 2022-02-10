@@ -4,7 +4,7 @@ const siteMetadata = {
   headerTitle: 'Vachuo',
   description: 'Some amazing blog posts that are written by even more amazing people',
   language: 'en-us',
-  siteUrl: 'https://blog.vachua.com',
+  siteUrl: 'https://www.eduuh.net',
   siteRepo: 'https://github.com/eduuh/journal',
   siteLogo: '/static/images/logo.svg',
   image: '/static/images/avatar.svg',
