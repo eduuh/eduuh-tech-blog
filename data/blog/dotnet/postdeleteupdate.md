@@ -8,6 +8,10 @@ images: []
 layout: PostLayout
 ---
 
+## Overview
+
+<TOCInline toc={props.toc} exclude="Overview" toHeading={2} asDisclosure />
+
 ## What you will Learn
 
 1. How to create resources with Post.
@@ -21,11 +25,11 @@ layout: PostLayout
 
 Add a Create Method to the interface.
 
-```csharp
+```csharp:Interface
 void CreateItem(Item item);
 ```
 
-To create some values may be generated on the server while other are supplied as DTO, therefore we need to add a **createDto**.
+To create some values may be generated on the server while other are supplied as DTO, therefore we need to add a `createDto`.
 
 ```csharp
 namespace catalog.Dtos;

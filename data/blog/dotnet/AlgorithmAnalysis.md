@@ -1,5 +1,5 @@
 ---
-title: Algorithm Analsis
+title: Algorithm Analysis (Big O)
 date: '2021-10-02'
 tags: ['.net', 'datastructure']
 draft: false
@@ -12,11 +12,11 @@ layout: PostLayout
 
 > What is an Algorithm?
 
-The science of computing is concerned with usig computer to solve problems.
+The science of computing is concerned with using computer to solve problems.
 
 An algorithm is a set of well-defined rules for solving a computational problem.
 
-Algorith analysis is concerned with comparing algorithms based upon the amount of computing resources that each algorithm uses.
+Algorithm analysis is concerned with comparing algorithms based upon the amount of computing resources that each algorithm uses.
 
 Computing resource can be examined terms of:
 
@@ -24,7 +24,7 @@ Computing resource can be examined terms of:
 
 - **Execution/Running time** the length of time an algorith requires to exucute.
 
-Benchmark Analysis tracking the time use to executet the function.
+Benchmark Analysis tracking the time use to execute the function.
 
 - Experimental running times of two algorithms are difficult to directly compare unless the experiments are performed in the same hardware and software environments.
 
@@ -62,8 +62,8 @@ We can adopt one of the three strategies:
 - log n - Logarithmic
 - n - Linear
 - n log n - Log Linear
-- n2 - Quadratic
-- n3 - Cubic
+- n^2 - Quadratic
+- n^3 - Cubic
 - 2n - Exponential
 
 ### Space Complexity
