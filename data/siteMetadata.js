@@ -1,8 +1,8 @@
 const siteMetadata = {
-  title: 'Vachuo-blog',
+  title: 'vachuo',
   author: 'eduuh',
   headerTitle: 'Vachuo',
-  description: '',
+  description: 'Here I share my learning experience and random experiments.',
   language: 'en-us',
   siteUrl: 'https://www.eduuh.net',
   siteRepo: 'https://github.com/eduuh/journal',

@@ -8,6 +8,26 @@ images: []
 layout: PostLayout
 ---
 
+## Overview of Data Structures
+
+A way to look at data strcuturse is to focus on their strengths and weaknesses.
+
+Characteristics of Data Structures.
+
+| Data Structure | Advantages                                                                                                        | Disadvantages                                                                        |
+| -------------- | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Array          | Quick Insertion <br/> Very fast access if index is known.                                                         | Slow Search <br/> Slow deletion <br/> fixed size                                     |
+| Ordered Array  | Quicker Search than unsorted array (binary search)                                                                | Slow insertion and deletion, fixed size<br/>                                         |
+| Stack          | Provides last-in , first out<br/>                                                                                 | Slow access to other elements                                                        |
+| Queue          | Provide first-in, first out access                                                                                | Slow access to other elements                                                        |
+| LinkedList     | Quick insertion <br/> Quick Deletion                                                                              | Slow Search                                                                          |
+| Binary Tree    | Quick Search , insertions , deletions (if the tree remains balanced)                                              | Deletion Algorithm is complex                                                        |
+| Red-Black tree | Quick Search , insertions , deletions (Tree always is balanced)                                                   | Complex                                                                              |
+| 2-3-4 tree     | Quick Search, insertion, deletions. <br/> Tree is always balanced <br/> Similar trees good for disk storage <br/> | Complex                                                                              |
+| Hash table     | Very fast access if key known. <br/> Fast Insertion                                                               | Slow deletion <br/> Slow access slow if key not known <br/> Inefficient memory usage |
+| Heap           | Fast insertion, deletion, access to largest item.                                                                 | Slow access to other items                                                           |
+| Graph          | Models real-world situations                                                                                      | Some algorithm are slow and complex                                                  |
+
 ## Internal DataStructure Used
 
 Table comparison of underlying DataStructures and the ordering of elements.
