@@ -6,6 +6,7 @@ draft: false
 summary: compare various collections, their internal data strucutrure, performance and their usage.
 images: []
 layout: PostLayout
+pinned: true
 ---
 
 ## Overview of Data Structures
