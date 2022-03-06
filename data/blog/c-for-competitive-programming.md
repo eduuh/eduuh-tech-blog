@@ -252,24 +252,3 @@ They are implemented for all containers expect the _foward_list_.
 #### Iterator Invalidation
 
 When there are changes in the contents of containers that is currently using iterators, these iterators may become invalid. The interator will no logger be guranteed to point to the same value.
-
-<!-- ## Algorithms -->
-<!--  -->
-<!-- - A collections of algorithms implementations for operations such as search and sort. -->
-<!--  -->
-<!-- ## Functors -->
-<!--  -->
-<!-- - Functions objects that can be parametrized in their constructors. -->
-<!--  -->
-<!-- ```mermaid -->
-<!-- graph LR -->
-<!-- A[Hard edge] -->B(Round edge) -->
-<!--     B --> C{Decision} -->
-<!--     C -->|One| D[Result one] -->
-<!--     C -->|Two| E[Result two] -->
-<!-- ``` -->
-<!--  -->
-<!-- ## STL Iterators -->
-<!-- ## Trasformation -->
-<!--  -->
-<!-- ## STL Functions -->
