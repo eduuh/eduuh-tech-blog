@@ -1,15 +1,15 @@
 const siteMetadata = {
-  title: 'Vachuo-blog',
-  author: 'Vachuo',
+  title: 'eduuh',
+  author: 'eduuh',
   headerTitle: 'Vachuo',
-  description: 'Some amazing blog posts that are written by even more amazing people',
+  description: 'Here I share my learning experience and random experiments.',
   language: 'en-us',
   siteUrl: 'https://www.eduuh.net',
   siteRepo: 'https://github.com/eduuh/journal',
   siteLogo: '/static/images/logo.svg',
   image: '/static/images/avatar.svg',
   socialBanner: '/static/images/twitter-card.png',
-  email: 'eduuhme@gmail.com',
+  email: 'eduuh.me@gmail.com',
   github: 'https://github.com/eduuh',
   twitter: 'https://twitter.com/eduuhmuraya',
   linkedin: 'https://www.linkedin.com/eduuh',
@@ -38,7 +38,7 @@ const siteMetadata = {
       mapping: 'pathname', // supported options: pathname, url, title
       reactions: '1', // Emoji reactions: 1 = enable / 0 = disable
       // Send discussion metadata periodically to the parent window: 1 = enable / 0 = disable
-      metadata: '0',
+      metadata: '1',
       // theme example: light, dark, dark_dimmed, dark_high_contrast
       // transparent_dark, preferred_color_scheme, custom
       theme: 'transparent_dark',

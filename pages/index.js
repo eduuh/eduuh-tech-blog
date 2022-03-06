@@ -7,7 +7,10 @@ import formatDate from '@/lib/utils/formatDate'
 
 import NewsletterForm from '@/components/NewsletterForm'
 
-const MAX_DISPLAY = 10
+const MAX_DISPLAY = 2012212
+
+import mermaid from 'mermaid'
+mermaid.initialize({ startOnLoad: true })
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')

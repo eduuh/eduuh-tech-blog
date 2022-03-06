@@ -9,4 +9,6 @@ linkedin: https://www.linkedin.com/in/eduuh
 github: https://github.com/eduuh
 ---
 
-Am a Microsoft Learn Student Ambassador, Postman Student Expert and a .Net Developer, who has been developing products that solve people's problems. My specialties include quickly learning new skills fast, problem-solving, domain-driven design, responsive design thinking, and Model View control patterns. I have managed to have work with this technologies C#, .Net Core Framework, SQL, Javascript, Typescript, HTML, CSS, Razor Pages, Linux Bash, Graphql (Hotchocolate .Net), docker and kubernetes, MongoDB, Express.Js, and Git/Github. I also Enjoy Reading Tech books
+My name is Edwin Muraya. I'm a `Programmer`. Am current looking for new opportunities, but this `blog, its content and opinions are my own`. I blog about technology, diversity , code , the web. I'm exited about community, social equity, open source and online media.
+
+Currently am also Microsoft Learn Student Ambassador, Postman Student Expert. Find more information [here]("https://eduuh.github.io/blog").
