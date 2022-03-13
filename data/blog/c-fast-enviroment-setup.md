@@ -1,7 +1,7 @@
 ---
 title: C++ Fast Enviroment Setup
-date: '2022-03-13'
-tags: ['dsa']
+date: '2022-03-12'
+tags: ['dsa', 'c++']
 draft: false
 summary: A quick way to create C++ Application for Competitive Programming question. Give yourself time to think and remove the boilerplate out of the way.
 images: []
@@ -215,6 +215,8 @@ vim.cmd([[
 
 ```
 
-#### To get Updated Version of the Script
+#### To get updated version of the script
 
-The final script can be found [here]()
+The final script can be found [here](https://github.com/eduuh/dotfiles/blob/main/.local/bin/prg)
+
+I will write on debugging and nice setup for `nvim`.
