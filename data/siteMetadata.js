@@ -2,7 +2,8 @@ const siteMetadata = {
   title: 'eduuh',
   author: 'eduuh',
   headerTitle: 'Vachuo',
-  description: 'Here I share my learning experience and random experiments.',
+  description:
+    'The more we explore tech. There is alot to learn and unlearn. Keep learning never stop',
   language: 'en-us',
   siteUrl: 'https://www.eduuh.net',
   siteRepo: 'https://github.com/eduuh/journal',
@@ -21,8 +22,6 @@ const siteMetadata = {
   },
   newsletter: {
     // supports mailchimp, buttondown, convertkit
-    // Please add your .env file and modify it according to your selection
-    provider: 'buttondown',
   },
   comment: {
     // Select a provider and use the environment variables associated to it
