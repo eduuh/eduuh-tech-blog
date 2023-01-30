@@ -10,8 +10,9 @@ layout: PostLayout
 
 ## Learning is a continual process.
 
-Being a good rider means that you never stop learning. Machines and riding conditions are constantly changings therefore my riding competency needs to keep pace with the changes otherwise you will become outdated and dangerous.
-
+Being a good rider means that you never stop learning. Machines and riding
+conditons are constantly changings therefore my riding competency needs to
+keep pace with the changes otherwise you will become outdated and dangerous.
 `Aim to constantly review`, where necessary adapt you riding so you maintain
 high standards and continually improve your performance.
 
