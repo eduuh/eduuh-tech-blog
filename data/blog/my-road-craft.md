@@ -1,5 +1,5 @@
 ---
-title: My Road Craft
+title: My Riding Code
 date: '2023-01-30'
 tags: ['Motocycle']
 draft: false
@@ -7,6 +7,19 @@ summary: The aim is to improve my riding ability. Ensure my safety and the safet
 images: []
 layout: PostLayout
 ---
+
+## Why you should not ride!
+
+1. Motocycles are Extremely dangerous: Its 33 times more dangerous than riding.
+2. Its very expensive. Full quality gear.
+3. It require high level of condination.
+4. Require continual education.
+
+## Why you should not ride!
+
+Your safety depends on your actions and your ability to anticipate and avoid the actions of other vehicles. You need a high level of attention, good hazard perceptions and excellent situation awareness.
+
+The ability to sense danger in a situation increases with experience, so you should always ride well within your capabilities.
 
 ## Learning is a continual process.
 
@@ -158,3 +171,16 @@ purpose is to alert them you are there.
 
 This is the last check to the side into the blind spots before you commit
 yourself to a manoeuvre. Do it just before the action.
+
+#### Four levels of riding
+
+1. Human factors that affects your riding.
+   - Your personal characteristics can increase or reduce your risk of a collisions.
+   - Your attitude to your own vulnerability and other road users.
+   - Your `confidence`, `emotions`, `mood` or `stress`.
+2. The purpose and context of your journey.
+   - Which route is best?.
+   - What distractions there are and how to minimise them.
+   - Assess the risks of the journey and your own fitness to ride.
+3. Traffic situations.
+4. Machine and Machine control.
