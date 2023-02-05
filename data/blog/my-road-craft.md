@@ -10,21 +10,29 @@ layout: PostLayout
 
 ## Why you should not ride!
 
-1. Motocycles are Extremely dangerous: Its 33 times more dangerous than riding.
-2. Its very expensive. Full quality gear.
-3. It require high level of condination.
-4. Require continual education.
+1. Motocycles are extremely dangerous! : Its 33 times more dangerous than driving.
+2. Its very expensive.
+   - Full quality gear. Gear that promotes "ride to be seen"
+   - High quality communication devices.
+   - First bike Learnings - Drops cost money
+   - Fuel
+3. It require high level of condination. You should never lose focus of the ride.
+4. Require continous educations. Learning from mistakes. The near misses. `Aim to review`.
 
-## Why you should not ride!
+## Notes
 
 Your safety depends on your actions and your ability to anticipate and avoid the actions of other vehicles. You need a high level of attention, good hazard perceptions and excellent situation awareness.
 
-The ability to sense danger in a situation increases with experience, so you should always ride well within your capabilities.
+Everything that happens to you, even if its `violation of right way`, is entirely you fault. Assume the drivers cannot see you, next time improve on `ride to be seen`.
+
+`Msee wa nduthi ni yeye ako na makosa` is literally correct. The ability to sense danger in a situation increases with experience `experience is gained by riding more - in all posible situations`, so you should always ride well within your capabilities.
+
+Finally `You need to understand your capabilities and that of the bike you ride`.
 
 ## Learning is a continual process.
 
 Being a good rider means that you never stop learning. Machines and riding
-conditions are constantly changing therefore my riding competency needs to
+conditions are constantly changing therefore your riding competency needs to
 keep pace with the changes otherwise you will become `outdated` and `dangerous`.
 
 `Aim to constantly review`, where necessary adapt you riding so you maintain
@@ -39,17 +47,19 @@ decide how you can avoid the same mistake in the future.
 1. `All Gear all the time.` (AGAT). That is Helmet, Armored Jacket, Knee
    Protection, Warm Clothes 2 Jackets, 2 trousers and 2 pair socks.
 
+   - Ride to be seen: `Reflective vest`.
+
 2. `Planing my long rides.`
 
    - Distance (Fuel range), Stops are important to recover from fatigue.
    - Food and refreshments.
-   - How is the weather? Should i carry rain gear? on entirely avoid the rain?
+   - How is the weather? Should i carry rain gear? or entirely avoid the rain?
 
 3. `No Music in traffic` or take a longer route with no traffic.
 
-4. `Unfamiliar roads:` Have google maps. Both screen and Audio.
+4. `Unfamiliar roads:` Have google maps. Both screen and audio. Screen can give you a sence of when approaching a sharp bend.
 
-5. `Riding is voe to remain sober`. Keeping off any type of drugs.
+5. `Riding is voe to remain sober`. Keeping off any type of drugs. Drink alot of coffee.
 
 6. `Start early and arrive early`. Don't let time pressure you. This comes back to proper planing.
 
@@ -58,7 +68,7 @@ decide how you can avoid the same mistake in the future.
 8. `TUG (Take, use and Give information)`. Group rides: Make decisions based on
    the information. Never use anyone's judgements. `Ride your ride`.
 
-9. `Avoid unplanned rides`.Take some few minutes and plan. Avoid randomness.
+9. `Avoid unplanned rides`.Take some few minutes and plan. Avoid randomness. If it must be random at least use familiar routes.
 
 ## Important operation to master.
 
@@ -103,7 +113,7 @@ Judging situations accurately and taking safe and appropriate action.
 
 ## Minimize the chances of becoming a stastitics.
 
-`Fact: Riding a motocycle doesn't increase your changes of a collision compared to driving a car, but for riders the outcomes tends to be more severe.`
+`Fact: Riding a motocycle doesn't increase your chances of a collision compared to driving a car, but for riders the outcomes tends to be more severe.`
 
 Riders are far more exposed in a collision that caged drivers. A rider is more
 likely to be killed or injured, even in minor collisions.
@@ -119,6 +129,8 @@ Motocyles riders are:
 
    - A driver looks and fails to see a motocyle rider and pulls out across
      their path, mainly on urbans roads at low speeds.
+
+   - Take this as you fault. Assume the drivers can't see you.
 
 2. `Loss of control on a bend, corner or curve on a rural road. :` - This purely a
    riders fault. More likely to be fatal because fo the speeds involved as even
@@ -140,7 +152,7 @@ Motocyles riders are:
 
 #### Areas of Improvement (Picked from Ubuntu 2023)
 
-1. Ride to be seen. I can do better here. Action: Bug reflective clothes.
+1. Ride to be seen. I can do better here. Action: Buy reflective clothes.
 
 #### Self-assessment
 
